@@ -8,7 +8,7 @@ Python Web Framework (PWeb). PWeb is a DRY full-stack framework based on Flask m
 ## Documentation
 Install and update using [pip](https://pip.pypa.io/en/stable/getting-started/):
 ```bash
-pip install -U PWeb
+pip install -U pweb
 ```
 
 **Please find [the Documentation]() with example from [hmtmcse.com]()**
