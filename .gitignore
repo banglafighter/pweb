@@ -16,4 +16,4 @@ build/
 .idea
 *.sqlite
 
-/dev-dependencies
+/dependencies
