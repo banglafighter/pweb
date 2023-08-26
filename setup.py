@@ -14,7 +14,7 @@ def get_dependencies():
     if env and env == "dev":
         return dependency
 
-    return dependency + []
+    return dependency + ["ppy-common"]
 
 
 setup(

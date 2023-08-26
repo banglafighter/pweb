@@ -9,7 +9,7 @@ class PWebEngine(PWebBismillah):
     version = '1.0.0'
 
     def __init__(self, name, project_root_path, **kwargs):
-        super().__init__(project_root_path=project_root_path, *kwargs)
+        super().__init__(name=name, project_root_path=project_root_path, *kwargs)
         self._project_name = name
 
     def run(self):
