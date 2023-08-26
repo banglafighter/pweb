@@ -5,6 +5,7 @@ from flask.cli import FlaskGroup
 from flask_cors import CORS
 from ppy_common.ppyc_console_log import Console
 from ppy_jsonyml import YAMLConfigLoader
+from pweb.system12.pweb_module_cli import init_pweb_module_cli
 from pweb.system12.pweb_registry import PWebRegistry
 from pweb.system12.pweb_base import PWebBase
 from pweb.system12.pweb_app_config import PWebAppConfig
@@ -49,6 +50,7 @@ class PWebBismillah(object):
         self._init_config()
         self._init_cors()
         self._init_log_conf()
+        self._init_module_cli()
 
     def run(self):
         self._pweb_app.run(host=self._config.HOST, port=self._config.PORT, load_dotenv=False, debug=self._config.DEBUG)
@@ -98,4 +100,5 @@ class PWebBismillah(object):
     def _init_log_conf(self):
         Console.enable_log = self._config.DEBUG
 
-
+    def _init_module_cli(self):
+        init_pweb_module_cli(self._pweb_app, self._config)

@@ -1,8 +1,6 @@
 import os
 import sys
-
 from setuptools import setup
-
 from ppy_common.ppyc_console_log import Console
 from ppy_file_text import StringUtil
 from pweb.system12.pweb_bismillah import PWebBismillah
@@ -15,8 +13,8 @@ class PWebEngine(PWebBismillah):
     version = '1.0.0'
 
     def __init__(self, name, project_root_path, **kwargs):
-        super().__init__(name=name, project_root_path=project_root_path, *kwargs)
         self._project_name = name
+        super().__init__(name=name, project_root_path=project_root_path, *kwargs)
 
     def setup_script(self):
         if self._project_name:

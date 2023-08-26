@@ -15,6 +15,22 @@ class PWebModuleManager:
         self._pweb_app = pweb_app
         self._register_modules()
 
+    def run_module_cli_init(self, config, pweb_app):
+        module_registry_packages = config.MODULE_REGISTRY_PACKAGE
+        if module_registry_packages and isinstance(module_registry_packages, list):
+            for module_registry_package in module_registry_packages:
+                modules = self._get_modules(module_registry_package, config)
+                if modules:
+                    with pweb_app.app_context():
+                        list_of_module = modules.get_module_list()
+                        if not list_of_module:
+                            return
+                        for module in list_of_module:
+                            if issubclass(module, PWebComponentRegister):
+                                instance = module()
+                                if hasattr(instance, "run_on_cli_init"):
+                                    instance.run_on_cli_init(pweb_app)
+
     def _register_modules(self):
         module_registry_packages = self._config.MODULE_REGISTRY_PACKAGE
         if module_registry_packages and isinstance(module_registry_packages, list):
