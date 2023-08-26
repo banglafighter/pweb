@@ -1,17 +1,21 @@
 import os
 import typing as t
+import click
+from flask.cli import FlaskGroup
+from flask_cors import CORS
+from ppy_common.ppyc_console_log import Console
 from ppy_jsonyml import YAMLConfigLoader
 from pweb.system12.pweb_registry import PWebRegistry
 from pweb.system12.pweb_base import PWebBase
 from pweb.system12.pweb_app_config import PWebAppConfig
-from pweb.system12.pweb_starter import PWebStarter
 from ppy_common import PyCommon
+from pweb.system12.pweb_module_manager import PWebModuleManager
 
 
 class PWebBismillah(object):
     _pweb_app: PWebBase
     _config: PWebAppConfig = None
-    _bootstrap: PWebStarter = PWebStarter()
+    _module_manager: PWebModuleManager = PWebModuleManager()
 
     def __init__(
             self,
@@ -43,9 +47,25 @@ class PWebBismillah(object):
         self._config = config
         self._process_resource_path(root_path=project_root_path)
         self._init_config()
+        self._init_cors()
+        self._init_log_conf()
 
     def run(self):
         self._pweb_app.run(host=self._config.HOST, port=self._config.PORT, load_dotenv=False, debug=self._config.DEBUG)
+
+    def get_app(self):
+        return self._pweb_app
+
+    def cli(self):
+        Console.yellow("-------------------------")
+        Console.green("   Welcome to PWeb CLI   ", True)
+        Console.yellow("-------------------------")
+
+        @click.group(cls=FlaskGroup, create_app=self.get_app)
+        def invoke_cli_script():
+            pass
+
+        return invoke_cli_script()
 
     def _process_resource_path(self, root_path):
         root_dir = os.path.dirname(os.path.abspath(root_path))
@@ -68,3 +88,14 @@ class PWebBismillah(object):
 
         if confi_class:
             yaml_env.merge_config(confi_class)
+
+    def _init_cors(self):
+        CORS(self._pweb_app, resources={
+            r"/api/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN},
+            r"/static/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN}
+        })
+
+    def _init_log_conf(self):
+        Console.enable_log = self._config.DEBUG
+
+
