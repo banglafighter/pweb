@@ -51,6 +51,7 @@ class PWebBismillah(object):
         self._init_cors()
         self._init_log_conf()
         self._init_module_cli()
+        self._module_manager.init_app(self._pweb_app, self._config)
 
     def run(self):
         self._pweb_app.run(host=self._config.HOST, port=self._config.PORT, load_dotenv=False, debug=self._config.DEBUG)
