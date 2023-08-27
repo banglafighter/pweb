@@ -50,6 +50,7 @@ class PWebBismillah(object):
         self._init_config()
         self._init_cors()
         self._init_log_conf()
+        self._copy_app_config_to_flask()
         self._init_module_cli()
         self._module_manager.init_app(self._pweb_app, self._config)
 
@@ -77,6 +78,9 @@ class PWebBismillah(object):
     def _init_config(self):
         self._merge_config()
         PWebRegistry.config = self._config
+
+    def _copy_app_config_to_flask(self):
+        self._pweb_app.config.from_object(self._config)
 
     def _merge_config(self):
         yaml_env = YAMLConfigLoader()
