@@ -11,6 +11,7 @@ from pweb.system12.pweb_base import PWebBase
 from pweb.system12.pweb_app_config import PWebAppConfig
 from ppy_common import PyCommon
 from pweb.system12.pweb_module_manager import PWebModuleManager
+from pweb_orm import pweb_orm
 
 
 class PWebBismillah(object):
@@ -51,6 +52,7 @@ class PWebBismillah(object):
         self._init_cors()
         self._init_log_conf()
         self._copy_app_config_to_flask()
+        self._init_orm()
         self._init_module_cli()
         self._module_manager.init_app(self._pweb_app, self._config)
 
@@ -107,3 +109,6 @@ class PWebBismillah(object):
 
     def _init_module_cli(self):
         init_pweb_module_cli(self._pweb_app, self._config)
+
+    def _init_orm(self):
+        pweb_orm.init_app(self._pweb_app)
