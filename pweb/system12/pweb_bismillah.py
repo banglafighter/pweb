@@ -47,8 +47,7 @@ class PWebBismillah(object):
             root_path=root_path,
         )
         self._config = config
-        self._process_resource_path(root_path=project_root_path)
-        self._init_config()
+        self._init_config(root_path=project_root_path)
         self._init_cors()
         self._init_log_conf()
         self._copy_app_config_to_flask()
@@ -77,14 +76,14 @@ class PWebBismillah(object):
         root_dir = os.path.dirname(os.path.abspath(root_path))
         self._config.set_base_dir(root_dir)
 
-    def _init_config(self):
-        self._merge_config()
+    def _init_config(self, root_path):
+        self._merge_config(root_path)
         PWebRegistry.config = self._config
 
     def _copy_app_config_to_flask(self):
         self._pweb_app.config.from_object(self._config)
 
-    def _merge_config(self):
+    def _merge_config(self, root_path):
         yaml_env = YAMLConfigLoader()
         confi_class = PyCommon.import_from_string(self._config.APPLICATION_CONFIGURATION, self._config.STRING_IMPORT_SILENT)
         if confi_class:
@@ -93,9 +92,14 @@ class PWebBismillah(object):
                 if key.isupper() and hasattr(self._config, key):
                     setattr(self._config, key, getattr(confi_class, key))
 
+        self._process_resource_path(root_path=root_path)
         self._config = yaml_env.load(project_root_path=self._config.APP_CONFIG_PATH, config_obj=self._config)
 
         if confi_class:
+            config_map = dir(self._config)
+            for key in config_map:
+                if key.isupper() and hasattr(confi_class, key):
+                    setattr(confi_class, key, getattr(self._config, key))
             yaml_env.merge_config(confi_class)
 
     def _init_cors(self):
