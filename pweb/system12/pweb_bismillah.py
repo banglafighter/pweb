@@ -11,7 +11,7 @@ from pweb.system12.pweb_base import PWebBase
 from pweb.system12.pweb_app_config import PWebAppConfig
 from ppy_common import PyCommon
 from pweb.system12.pweb_module_manager import PWebModuleManager
-from pweb_orm import pweb_orm
+from pweb_orm import pweb_orm, PWebSaaS
 
 
 class PWebBismillah(object):
@@ -115,4 +115,5 @@ class PWebBismillah(object):
         init_pweb_module_cli(self._pweb_app, self._config)
 
     def _init_orm(self):
+        PWebSaaS.tenantResolver = self._config.TENANT_RESOLVER
         pweb_orm.init_app(self._pweb_app)

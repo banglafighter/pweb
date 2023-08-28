@@ -1,5 +1,6 @@
 import os
 from ppy_jsonyml import YAMLConfigObj
+from pweb_orm import PWebSaaSTenantResolver
 
 
 class PWebAppConfig(YAMLConfigObj):
@@ -27,6 +28,9 @@ class PWebAppConfig(YAMLConfigObj):
     # CORS
     ALLOW_CORS_ORIGINS: list = ["*"]
     ALLOW_ACCESS_CONTROL_ORIGIN: str = "*"
+
+    # SaaS
+    TENANT_RESOLVER: PWebSaaSTenantResolver = None
 
     def set_base_dir(self, path):
         if not self.BASE_DIR:
