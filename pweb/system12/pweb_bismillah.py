@@ -11,12 +11,14 @@ from pweb.system12.pweb_base import PWebBase
 from pweb.system12.pweb_app_config import PWebAppConfig
 from ppy_common import PyCommon
 from pweb.system12.pweb_module_manager import PWebModuleManager
+from pweb_form_rest import PWebFR
 from pweb_orm import pweb_orm, PWebSaaS
 
 
 class PWebBismillah(object):
     _pweb_app: PWebBase
     _config: PWebAppConfig = None
+    _application_config: PWebAppConfig = None
     _module_manager: PWebModuleManager = PWebModuleManager()
 
     def __init__(
@@ -54,6 +56,7 @@ class PWebBismillah(object):
         self._init_orm()
         self._init_module_cli()
         self._module_manager.init_app(self._pweb_app, self._config)
+        self._init_form_rest_module()
 
     def run(self):
         self._pweb_app.run(host=self._config.HOST, port=self._config.PORT, load_dotenv=False, debug=self._config.DEBUG)
@@ -101,6 +104,7 @@ class PWebBismillah(object):
                 if key.isupper() and hasattr(confi_class, key):
                     setattr(confi_class, key, getattr(self._config, key))
             yaml_env.merge_config(confi_class)
+        self._application_config = confi_class
 
     def _init_cors(self):
         CORS(self._pweb_app, resources={
@@ -117,3 +121,7 @@ class PWebBismillah(object):
     def _init_orm(self):
         PWebSaaS.tenantResolver = self._config.TENANT_RESOLVER
         pweb_orm.init_app(self._pweb_app)
+
+    def _init_form_rest_module(self):
+        form_rest = PWebFR()
+        form_rest.init_app(self._pweb_app, self._application_config)
