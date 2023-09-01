@@ -9,10 +9,12 @@ from ppy_common import PyCommon, PPyCException
 class PWebModuleManager:
     _pweb_app: PWebBase
     _config: PWebAppConfig = None
+    _pweb_orm = None
 
-    def init_app(self, pweb_app, config: PWebAppConfig):
+    def init_app(self, pweb_app, config: PWebAppConfig, pweb_orm):
         self._config = config
         self._pweb_app = pweb_app
+        self._pweb_orm = pweb_orm
         self._register_modules()
 
     def run_module_cli_init(self, config, pweb_app):
@@ -29,7 +31,7 @@ class PWebModuleManager:
                             if issubclass(module, PWebComponentRegister):
                                 instance = module()
                                 if hasattr(instance, "run_on_cli_init"):
-                                    instance.run_on_cli_init(pweb_app)
+                                    instance.run_on_cli_init(pweb_app, config)
 
     def _register_modules(self):
         module_registry_packages = self._config.MODULE_REGISTRY_PACKAGE
@@ -46,14 +48,14 @@ class PWebModuleManager:
                         for module in list_of_module:
                             if issubclass(module, PWebComponentRegister):
                                 instance = module()
-                                # instance.register_model(pweb_db) # TODO: Init Module Later
+                                instance.register_model(self._pweb_orm)
 
                         # After Model Registration Run Other Init
                         for module in list_of_module:
                             if issubclass(module, PWebComponentRegister):
                                 instance = module()
                                 instance.register_controller(self._pweb_app)
-                                instance.run_on_start(self._pweb_app)
+                                instance.run_on_start(self._pweb_app, self._config)
 
     def _get_modules(self, module_registry_package, config) -> Optional[PWebModuleRegister]:
         app_config = PyCommon.import_from_string(module_registry_package, config.STRING_IMPORT_SILENT)

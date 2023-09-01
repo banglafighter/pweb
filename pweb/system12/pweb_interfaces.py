@@ -19,8 +19,9 @@ class PWebComponentRegister(ABC):
         pass
 
     @abstractmethod
-    def run_on_start(self, pweb_app):
+    def run_on_start(self, pweb_app, config):
         pass
 
-    def run_on_cli_init(self, pweb_app):
+    @abstractmethod
+    def run_on_cli_init(self, pweb_app, config):
         pass

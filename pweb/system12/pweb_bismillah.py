@@ -55,7 +55,7 @@ class PWebBismillah(object):
         self._copy_app_config_to_flask()
         self._init_orm()
         self._init_module_cli()
-        self._module_manager.init_app(self._pweb_app, self._config)
+        self._module_manager.init_app(self._pweb_app, self._application_config, pweb_orm)
         self._init_form_rest_module()
 
     def run(self):
