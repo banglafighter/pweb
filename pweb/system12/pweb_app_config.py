@@ -4,6 +4,7 @@ from pweb_orm import PWebSaaSTenantResolver
 
 
 class PWebAppConfig(YAMLConfigObj):
+    APP_NAME: str = "PWeb"
     PORT: int = 1200
     HOST: str = "127.0.0.1"
 
