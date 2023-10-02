@@ -1,0 +1,65 @@
+== All Dependencies and their version
+
+|===
+|Use|Package Name|Version|Docs|Source
+
+|Console Library
+|click
+|8.1.7
+a|link:https://click.palletsprojects.com/en/8.1.x/[Document]
+a|link:https://github.com/pallets/click[Source Code, window=_blank]
+
+|YAML file manipulator
+|PyYAML
+|6.0.1
+a|link:https://pyyaml.org/[Document, window=_blank]
+a|link:https://github.com/yaml/pyyaml[Source Code, window=_blank]
+
+
+|Flask app base
+|Flask
+|3.0.0
+a|link:https://flask.palletsprojects.com/en/3.0.x/[Document, window=_blank]
+a|link:https://github.com/pallets/flask[Source Code, window=_blank]
+
+
+|CORS Handler
+|Flask-Cors
+|4.0.0
+a|link:https://flask-cors.corydolphin.com/en/latest/api.html[Document, window=_blank]
+a|link:https://github.com/corydolphin/flask-cors[Source Code, window=_blank]
+
+
+|Serializer & Deserializer
+|marshmallow
+|3.20.1
+a|link:https://marshmallow.readthedocs.io/en/stable/[Document, window=_blank]
+a|link:https://github.com/marshmallow-code/marshmallow[Source Code, window=_blank]
+
+
+|Swagger Specification Generator
+|apispec
+|6.3.0
+a|link:[Document, window=_blank]
+a|link:https://github.com/marshmallow-code/apispec[Source Code, window=_blank]
+
+|Connect marshmallow to sqlalchemy
+|marshmallow-sqlalchemy
+|0.29.0
+a|link:https://marshmallow-sqlalchemy.readthedocs.io/en/latest/[Document, window=_blank]
+a|link:https://github.com/marshmallow-code/marshmallow-sqlalchemy[Source Code, window=_blank]
+
+|Connect Flask to SQLAlchemy
+|Flask-SQLAlchemy
+|3.1.1
+a|link:https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/[Document, window=_blank]
+a|link:https://github.com/pallets-eco/flask-sqlalchemy[Source Code, window=_blank]
+
+// |
+// |
+// |
+// a|link:[Document, window=_blank]
+// a|link:[Source Code, window=_blank]
+
+
+|===
