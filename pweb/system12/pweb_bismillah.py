@@ -1,6 +1,7 @@
 import os
 import typing as t
 import click
+from flask import make_response, send_from_directory
 from flask.cli import FlaskGroup
 from flask_cors import CORS
 from ppy_common.ppyc_console_log import Console
@@ -57,6 +58,7 @@ class PWebBismillah(object):
         self._init_module_cli()
         self._module_manager.init_app(self._pweb_app, self._application_config, pweb_orm)
         self._init_form_rest_module()
+        self._init_static_resource_mapping()
 
     def run(self):
         self._pweb_app.run(host=self._config.HOST, port=self._config.PORT, load_dotenv=False, debug=self._config.DEBUG)
@@ -125,3 +127,13 @@ class PWebBismillah(object):
     def _init_form_rest_module(self):
         form_rest = PWebFR()
         form_rest.init_app(self._pweb_app, self._application_config)
+
+    def _init_static_resource_mapping(self):
+        if self._config.UPLOADED_STATIC_RESOURCES_URL and self._config.UPLOADED_STATIC_RESOURCES_URL != "":
+            url = self._config.UPLOADED_STATIC_RESOURCES_URL + "/<path:path>"
+            self._pweb_app.add_url_rule(url, view_func=self.static_resource_endpoint)
+
+    def static_resource_endpoint(self, path):
+        response = make_response(send_from_directory(self._config.UPLOADED_STATIC_RESOURCES, path))
+        response.headers['Access-Control-Allow-Origin'] = self._config.ALLOW_ACCESS_CONTROL_ORIGIN
+        return response
