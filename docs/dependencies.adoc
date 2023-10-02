@@ -55,6 +55,43 @@ a|link:https://github.com/marshmallow-code/marshmallow-sqlalchemy[Source Code, w
 a|link:https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/[Document, window=_blank]
 a|link:https://github.com/pallets-eco/flask-sqlalchemy[Source Code, window=_blank]
 
+|Password hashing
+|bcrypt
+|4.0.1
+a|link:https://github.com/pyca/bcrypt[Document, window=_blank]
+a|link:https://github.com/pyca/bcrypt[Source Code, window=_blank]
+
+|JWT Token Maker
+|PyJWT
+|2.8.0
+a|link:https://pyjwt.readthedocs.io/en/stable/[Document, window=_blank]
+a|link:https://github.com/jpadilla/pyjwt[Source Code, window=_blank]
+
+// |
+// |
+// |
+// a|link:[Document, window=_blank]
+// a|link:[Source Code, window=_blank]
+
+// |
+// |
+// |
+// a|link:[Document, window=_blank]
+// a|link:[Source Code, window=_blank]
+
+// |
+// |
+// |
+// a|link:[Document, window=_blank]
+// a|link:[Source Code, window=_blank]
+
+
+// |
+// |
+// |
+// a|link:[Document, window=_blank]
+// a|link:[Source Code, window=_blank]
+
 // |
 // |
 // |
