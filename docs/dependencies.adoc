@@ -67,17 +67,17 @@ a|link:https://github.com/pyca/bcrypt[Source Code, window=_blank]
 a|link:https://pyjwt.readthedocs.io/en/stable/[Document, window=_blank]
 a|link:https://github.com/jpadilla/pyjwt[Source Code, window=_blank]
 
-// |
-// |
-// |
-// a|link:[Document, window=_blank]
-// a|link:[Source Code, window=_blank]
+|Virtual environment manager
+|virtualenv
+|
+a|link:https://virtualenv.pypa.io/en/latest/[Document, window=_blank]
+a|link:https://github.com/pypa/virtualenv[Source Code, window=_blank]
 
-// |
-// |
-// |
-// a|link:[Document, window=_blank]
-// a|link:[Source Code, window=_blank]
+|Use for git management
+|GitPython
+|3.1.37
+a|link:[Document, window=_blank]
+a|link:[Source Code, window=_blank]
 
 // |
 // |
