@@ -24,7 +24,7 @@ class PWebAppConfig(YAMLConfigObj):
 
     STRING_IMPORT_SILENT: bool = False
     APPLICATION_CONFIGURATION: str = "application.config.app_config.Config"
-    MODULE_REGISTRY_PACKAGE: list = ["application.config.module_registry.Register"]
+    APPLICATION_MODULE_REGISTRY: str = "application.config.module_registry.Register"
 
     # CORS
     ALLOW_CORS_ORIGINS: list = ["*"]

@@ -8,6 +8,14 @@ class PWebModuleRegister(ABC):
         pass
 
 
+class PWebModuleDetails:
+    systemName: str = None  # Should be alphabet & number with - (hyphen)
+    displayName: str = None
+
+    def __init__(self, system_name: str, display_name: str = None):
+        self.systemName = system_name
+
+
 class PWebComponentRegister(ABC):
 
     @abstractmethod
@@ -24,4 +32,8 @@ class PWebComponentRegister(ABC):
 
     @abstractmethod
     def run_on_cli_init(self, pweb_app, config):
+        pass
+
+    @abstractmethod
+    def app_details(self) -> PWebModuleDetails:
         pass
