@@ -11,7 +11,7 @@ env = os.environ.get('source')
 def get_dependencies():
     dependency = ["Flask==3.0.0", "Flask-Cors==4.0.0"]
 
-    if env and env == "dev":
+    if env and env == "code":
         return dependency
 
     return dependency + ["ppy-common", "pweb-orm", "pweb-form-rest", "pweb-cli"]
