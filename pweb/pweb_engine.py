@@ -18,7 +18,11 @@ class PWebEngine(PWebBismillah):
 
     def setup_script(self):
         if self._project_name:
-            name = StringUtil.system_readable(self._project_name)
+            name = self._project_name
+            name = name.lower()
+            name = StringUtil.find_and_replace_with(name, " ", "-")
+            name = name.strip()
+            name = f"{StringUtil.remove_special_character(name)}-pweb-system"
             setup(
                 version=self.version,
                 name=name,
