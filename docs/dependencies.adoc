@@ -45,7 +45,7 @@ a|link:https://github.com/marshmallow-code/apispec[Source Code, window=_blank]
 
 |Connect marshmallow to sqlalchemy
 |marshmallow-sqlalchemy
-|0.29.0
+|
 a|link:https://marshmallow-sqlalchemy.readthedocs.io/en/latest/[Document, window=_blank]
 a|link:https://github.com/marshmallow-code/marshmallow-sqlalchemy[Source Code, window=_blank]
 
