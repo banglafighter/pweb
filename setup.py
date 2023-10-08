@@ -14,11 +14,11 @@ def get_dependencies():
     if env and env == "dev":
         return dependency
 
-    return dependency + ["ppy-common", "pweb-orm", "pweb-form-rest"]
+    return dependency + ["ppy-common", "pweb-orm", "pweb-form-rest", "pweb-cli"]
 
 
 setup(
-    name='pwebb',
+    name='pwebf',
     version='0.0.1',
     url='https://github.com/problemfighter/pweb',
     license='Apache 2.0',
