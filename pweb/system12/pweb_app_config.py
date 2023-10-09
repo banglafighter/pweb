@@ -27,6 +27,7 @@ class PWebAppConfig(YAMLConfigObj):
     APPLICATION_MODULE_REGISTRY: str = "application.config.module_registry.Register"
 
     # CORS
+    REST_URL_START_WITH = "api"
     ALLOW_CORS_ORIGINS: list = ["*"]
     ALLOW_ACCESS_CONTROL_ORIGIN: str = "*"
 

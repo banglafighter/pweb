@@ -109,10 +109,11 @@ class PWebBismillah(object):
         self._application_config = confi_class
 
     def _init_cors(self):
-        CORS(self._pweb_app, resources={
-            r"/api/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN},
+        resources = {
+            r"/" + str(self._config.REST_URL_START_WITH) + "/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN},
             r"/static/*": {"origins": self._config.ALLOW_CORS_ORIGINS, "Access-Control-Allow-Origin": self._config.ALLOW_ACCESS_CONTROL_ORIGIN}
-        })
+        }
+        CORS(self._pweb_app, resources=resources)
 
     def _init_log_conf(self):
         Console.enable_log = self._config.DEBUG
