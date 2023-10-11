@@ -9,22 +9,22 @@ env = os.environ.get('source')
 
 
 def get_dependencies():
-    dependency = []
+    dependency = ["Flask==3.0.0", "Flask-Cors==4.0.0"]
 
-    if env and env == "dev":
+    if env and env == "code":
         return dependency
 
-    return dependency + []
+    return dependency + ["ppy-common", "pweb-orm", "pweb-form-rest", "pweb-cli"]
 
 
 setup(
-    name='pweb',
-    version='1.0.0',
+    name='pwebb',
+    version='0.0.2',
     url='https://github.com/problemfighter/pweb',
     license='Apache 2.0',
     author='Problem Fighter',
     author_email='problemfighter.com@gmail.com',
-    description='Python Web Framework (PWeb). PWeb is a DRY full-stack framework based on Flask micro web framework.',
+    description='Python Web Boot (PWebB). PWebB is a DRY full-stack framework based on Flask micro web framework.',
     long_description=README,
     long_description_content_type='text/markdown',
     packages=find_packages(),

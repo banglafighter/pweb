@@ -1,14 +1,14 @@
 ### In the name of God, the Most Gracious, the Most Merciful.
 
-# PWeb
-Python Web Framework (PWeb). PWeb is a DRY full-stack framework based on Flask micro web framework.
+# PWebB
+Python Web Boot (PWebB). PWebB is a DRY full-stack framework based on Flask micro web framework.
 
 
 <br/><br/><br/>
 ## Documentation
 Install and update using [pip](https://pip.pypa.io/en/stable/getting-started/):
 ```bash
-pip install -U PWeb
+pip install -U pwebb
 ```
 
 **Please find [the Documentation]() with example from [hmtmcse.com]()**
