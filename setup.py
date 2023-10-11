@@ -19,7 +19,7 @@ def get_dependencies():
 
 setup(
     name='pwebb',
-    version='0.0.2',
+    version='0.0.3',
     url='https://github.com/problemfighter/pweb',
     license='Apache 2.0',
     author='Problem Fighter',
