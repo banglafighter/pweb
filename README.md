@@ -6,12 +6,36 @@ Python Web Boot (PWebB). PWebB is a DRY full-stack framework based on Flask micr
 
 <br/><br/><br/>
 ## Documentation
-Install and update using [pip](https://pip.pypa.io/en/stable/getting-started/):
+
+### Install and update using [pip](https://pip.pypa.io/en/stable/getting-started/):
 ```bash
 pip install -U pwebb
 ```
 
-**Please find [the Documentation]() with example from [hmtmcse.com]()**
+### Create project using CLI
+```bash
+pwebcli project init -n <specify_project_name>
+```
+It will automatically create a project with the name. For example the project name is **example** then it will create
+an example directory and initialize the project in it.
+
+### Run the project 
+```bash
+cd <specify_project_name>
+
+# If windows then active the virtual environment using below command
+venv\Scripts\activate
+
+# For Linux or MacOS
+source venv\bin\activate
+
+# Run project using below command
+python pweb_app.py
+```
+The project will run in http://127.0.0.1:1212
+
+
+**Please find [the Documentation]() with example from [hmtmcse.com/pweb]()**
 
 
 <br/><br/><br/>
