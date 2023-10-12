@@ -35,6 +35,9 @@ python pweb_app.py
 The project will run in http://127.0.0.1:1212
 
 
+
+<br/><br/>
+
 **Please find [the Documentation]() with example from [hmtmcse.com/pweb]()**
 
 
@@ -42,6 +45,8 @@ The project will run in http://127.0.0.1:1212
 ## Donate
 [Problem Fighter](https://www.problemfighter.com/) develops and supports PWeb and the libraries it uses. In order to grow
 the community of contributors and users, and allow the maintainers to devote more time to the projects.
+
+<a href="https://www.buymeacoffee.com/problemfighter" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me Us Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 
 <br/><br/><br/>
