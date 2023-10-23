@@ -19,11 +19,11 @@ def get_dependencies():
 
 setup(
     name='pwebb',
-    version='0.0.4',
-    url='https://github.com/problemfighter/pweb',
+    version='0.0.6',
+    url='https://github.com/banglafighter/pweb',
     license='Apache 2.0',
-    author='Problem Fighter',
-    author_email='problemfighter.com@gmail.com',
+    author='Bangla Fighter',
+    author_email='banglafighter.com@gmail.com',
     description='Python Web Boot (PWebB). PWebB is a DRY full-stack framework based on Flask micro web framework.',
     long_description=README,
     long_description_content_type='text/markdown',
@@ -31,6 +31,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
+    entry_points={'console_scripts': ['pweb=pweb_app:cli']},
     install_requires=get_dependencies(),
     classifiers=[
         'Intended Audience :: Developers',

@@ -43,10 +43,10 @@ The project will run in http://127.0.0.1:1212
 
 <br/><br/><br/>
 ## Donate
-[Problem Fighter](https://www.problemfighter.com/) develops and supports PWeb and the libraries it uses. In order to grow
+[Bangla Fighter](https://www.banglafighter.com/) develops and supports PWeb and the libraries it uses. In order to grow
 the community of contributors and users, and allow the maintainers to devote more time to the projects.
 
-<a target="_blank" href="https://www.buymeacoffee.com/problemfighter" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me Us Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a target="_blank" href="https://www.buymeacoffee.com/banglafighter" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me Us Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 
 <br/><br/><br/>
@@ -56,9 +56,9 @@ For guidance on setting up a development environment and how to make a contribut
 
 <br/><br/><br/>
 ## Links
-* **Changes :** [https://opensource.problemfighter.org/pweb/pweb](https://opensource.problemfighter.org/pweb/pweb)
+* **Changes :** [https://opensource.banglafighter.org/pweb/pweb](https://opensource.banglafighter.org/pweb/pweb)
 * **PyPI Releases :** [https://pypi.org/project/pwebb](https://pypi.org/project/pwebb)
-* **Source Code :** [https://github.com/problemfighter/pweb](https://github.com/problemfighter/pweb)
-* **Issue Tracker :** [https://github.com/problemfighter/pweb/issues](https://github.com/problemfighter/pweb/issues)
+* **Source Code :** [https://github.com/banglafighter/pweb](https://github.com/banglafighter/pweb)
+* **Issue Tracker :** [https://github.com/banglafighter/pweb/issues](https://github.com/banglafighter/pweb/issues)
 * **Website :** [https://www.problemfighter.com/open-source](https://www.problemfighter.com/open-source)
 
