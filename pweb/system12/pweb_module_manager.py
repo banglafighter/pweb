@@ -43,6 +43,9 @@ class PWebModuleManager:
             for module in list_of_module:
                 if issubclass(module, PWebComponentRegister):
                     instance = module()
+                    if hasattr(instance, "run_on_start"):
+                        instance.run_on_start(pweb_app, config)
+
                     if hasattr(instance, "run_on_cli_init"):
                         instance.run_on_cli_init(pweb_app, config)
 
