@@ -17,6 +17,7 @@ class PWebEngine(PWebBismillah):
         super().__init__(name=name, project_root_path=project_root_path, *kwargs)
 
     def setup_script(self):
+        # Install feature transferred to setup.py, TODO: in future will remove it
         if self._project_name:
             name = self._project_name
             name = name.lower()

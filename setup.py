@@ -19,7 +19,7 @@ def get_dependencies():
 
 setup(
     name='pwebb',
-    version='0.0.15',
+    version='0.0.16',
     url='https://github.com/banglafighter/pweb',
     license='Apache 2.0',
     author='Bangla Fighter',
@@ -31,7 +31,6 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    entry_points={'console_scripts': ['pweb=pweb_app:cli']},
     install_requires=get_dependencies(),
     classifiers=[
         'Intended Audience :: Developers',
